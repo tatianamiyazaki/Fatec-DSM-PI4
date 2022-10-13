@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/login.dart';
 import 'screens/dashboard.dart';
 
 void main() => runApp(TaCalor());
@@ -12,7 +13,7 @@ class TaCalor extends StatelessWidget {
         scaffoldBackgroundColor: Colors.grey,
       ),
       debugShowCheckedModeBanner: false,
-      home: dashboard(), //chama a tela com os cards
+      home: login(), //chama a tela com os cards
     );
   }
 }

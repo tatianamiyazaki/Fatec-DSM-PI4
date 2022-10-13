@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'login.dart';
+
 const _tituloAppBar = 'Ta Calor?';
 const _textoTemperatura = 'Temperatura';
 const _textoUmidade = 'Umidade';
 const _textoRaiosUV = 'Raios UV';
+const _textoBotaoCadastrar = 'Cadastrar';
 
 class dashboard extends StatelessWidget {
   @override
@@ -21,7 +24,16 @@ class dashboard extends StatelessWidget {
           actions: [
             IconButton(
               icon: const Icon(Icons.exit_to_app),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return login();
+                    },
+                  ),
+                );
+              },
             )
           ],
         ),
@@ -96,6 +108,22 @@ class dashboard extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+              TextField(
+                style: TextStyle(),
+                obscureText: true,
+                decoration: InputDecoration(
+                  fillColor: Colors.grey.shade100,
+                  filled: true,
+                  hintText: "Informe seu telefone e receba alertas",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                child: Text(_textoBotaoCadastrar),
+                onPressed: () {},
               ),
             ],
           ),

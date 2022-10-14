@@ -9,7 +9,7 @@ class TaCalor extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.red,
         scaffoldBackgroundColor: Colors.grey,
       ),
       debugShowCheckedModeBanner: false,

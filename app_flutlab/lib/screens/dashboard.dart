@@ -4,6 +4,7 @@ import 'package:grafico/screens/humid_charts.dart';
 import 'package:grafico/screens/temp_charts.dart';
 import 'package:grafico/screens/uv_charts.dart';
 
+
 import 'login.dart';
 
 const _tituloAppBar = 'Ta Calor?';
@@ -41,6 +42,7 @@ class dashboard extends StatelessWidget {
           ],
         ),
         body: Container(
+          child: SingleChildScrollView(
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -142,15 +144,19 @@ class dashboard extends StatelessWidget {
                   ),
                 ),
               ),
-              TextField(
-                style: TextStyle(),
-                obscureText: true,
-                decoration: InputDecoration(
-                  fillColor: Colors.grey.shade100,
-                  filled: true,
-                  hintText: "Informe seu telefone e receba alertas",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0),
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  style: TextStyle(),
+                  decoration: InputDecoration(
+                    labelText: 'Informe seu celular e receba alertas',
+                    fillColor: Colors.grey.shade100,
+                    filled: true,
+                    hintText: 'Informe seu telefone e receba alertas',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
                 ),
               ),
@@ -161,7 +167,7 @@ class dashboard extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      ),),
     );
   }
 }

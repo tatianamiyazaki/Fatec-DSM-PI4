@@ -1,0 +1,12 @@
+* {
+    --main-color: #3fb8a9;
+    --second-color: #3fb8aaaf;
+    --button-color: #4647EB;
+    --sub-color: #E091A6;
+    --text-color: #fff;
+    
+}
+body {
+    padding: 0;
+    margin: 0;
+}

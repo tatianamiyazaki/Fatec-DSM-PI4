@@ -1,0 +1,35 @@
+.mainContainer {
+    /* display: flex; */
+    background: var(--main-color);
+    height: 100vh;
+    /* width: 300px; */
+}
+
+.mainPrincipal {
+    position: relative;
+    left: 100px;
+    width: calc(100% - 100px);
+    height: calc(100vh - 70px);   
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.header {
+    position: relative;
+    left: 100px;
+    width: calc(100% - 100px);
+    height: 50px;
+    border-radius: 0 0 30px 30px;
+    background:  linear-gradient(var(--button-color), var(--main-color));
+    opacity: 0.4;
+    transition: 0.5s;    
+}
+
+.header.active,
+.mainPrincipal.active {
+    left: 270px;
+    width: calc(100% - 270px);
+    transition: 0.5s;
+    
+}

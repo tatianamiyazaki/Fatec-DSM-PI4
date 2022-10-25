@@ -1,0 +1,66 @@
+pipeline {
+    agent any
+    stages {
+        stage("Estagio 1 - Commit inicial") {
+            steps {
+                echo 'Verifica se houve novo commit na branch'
+                echo 'Inicia o processo de testes'                
+            }
+        }
+        stage("Estagio 2 - testes") {
+                    when {
+                        expression { BRANCH ==~ /(Master|main)/}
+                    }
+            parallel {
+                stage("Teste 1 - unitários") {
+                    when {
+                        expression { BRANCH ==~ /(Master)/}
+                    }
+                    steps {
+                        echo 'executando as rotinas de testes unitários'
+                    }
+                }
+                stage("Teste 2 - performance") {
+                    when {
+                        expression { BRANCH ==~ /(Master)/}
+                    }
+                    steps {
+                        echo 'executando as rotinas de testes de performance'
+                    }
+                }
+                stage("Teste 3 - versão") {
+                    when {
+                        expression { BRANCH ==~ /(main)/}
+                    }
+                    steps {
+                        echo 'executando para produção'
+                    }
+                }
+            }
+        }    
+        stage("Estagio 3 - Build") {
+            when {
+                expression { BRANCH ==~ /(main)/}
+            }
+            steps {
+                echo 'Builda a aplicação e troca a branch para release'
+            }
+        }
+        stage("Estagio 4 - Release") {
+            when {
+                expression { BRANCH ==~ /(release)/}
+            }            
+            steps {
+                echo 'Cria o arquivo de release'
+            }
+        }
+        stage("Estagio 5 - Nova branch") {
+            when {
+                expression { BRANCH ==~ /(main)/}
+            }
+            steps {
+                echo 'Cria uma nova branch, copiando os dados para essa branch'
+            }
+        }
+    }
+}

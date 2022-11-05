@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.grafico"
+3    package="com.example.tacalor"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -21,9 +21,9 @@
 18-->[androidx.core:core:1.6.0] C:\Users\tatim\.gradle\caches\transforms-2\files-2.1\122df2e57d294d1a53db26bbc3b813c1\core-1.6.0\AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
-21        android:label="grafico" >
+21        android:label="tacalor" >
 22        <activity
-23            android:name="com.example.grafico.MainActivity"
+23            android:name="com.example.tacalor.MainActivity"
 24            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 25            android:exported="true"
 26            android:hardwareAccelerated="true"

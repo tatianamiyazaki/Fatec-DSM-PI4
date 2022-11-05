@@ -1,4 +1,4 @@
-com.example.grafico
+com.example.tacalor
 attr activityAction
 attr activityName
 attr alpha

@@ -1,4 +1,4 @@
-#Fri Nov 04 22:15:51 BRT 2022
+#Mon Nov 07 13:53:30 BRT 2022
 base.0=C\:\\Users\\tatim\\Desktop\\TaCalor\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

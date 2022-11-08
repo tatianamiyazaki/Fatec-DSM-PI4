@@ -21,6 +21,8 @@ dependencies:
     sdk: flutter
   http: ^0.12.2
   shared_preferences: ^2.0.15
+  dio: ^4.0.6
+  http_parser: ^4.0.0
 
 
 dev_dependencies:

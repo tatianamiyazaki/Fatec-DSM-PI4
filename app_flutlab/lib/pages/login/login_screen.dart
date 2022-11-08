@@ -218,7 +218,16 @@ class _LoginScreenState extends State<LoginScreen> {
   void _doLogin() async {
     if (_formKey.currentState!.validate()) {
       LoginService()
-          .login(_mailInputController.text, _passwordInputController.text);
+          .login(_mailInputController.text, _passwordInputController.text, context);
+      if (LoginService == true){
+        print ("entrou!!!");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => dashboard(),
+          ),
+        );
+      }
     } else {
       final snackBar = SnackBar(
         content: Text('Email ou senha inválidos'),
@@ -233,4 +242,5 @@ class _LoginScreenState extends State<LoginScreen> {
       print("invalido");
     }
   }
+
 }

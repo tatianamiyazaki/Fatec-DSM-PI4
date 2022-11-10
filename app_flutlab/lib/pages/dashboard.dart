@@ -16,10 +16,11 @@ class dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        scaffoldBackgroundColor: Colors.white70,
-      ),
+ //     theme: ThemeData(
+ //       primarySwatch: Colors.red,
+ //       scaffoldBackgroundColor: Colors.white70,
+ //     ),
+
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
@@ -41,6 +42,16 @@ class dashboard extends StatelessWidget {
           ],
         ),
         body: Container(
+          height: MediaQuery.of(context).size.height,
+          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 50),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.orange, Color.fromARGB(255, 255, 220, 220)],
+              //colors: [Colors.blue, Color.fromARGB(255, 212, 247, 255)],
+            ),
+          ),
           child: SingleChildScrollView(
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.end,
@@ -159,9 +170,12 @@ class dashboard extends StatelessWidget {
                   ),
                 ),
               ),
-              ElevatedButton(
-                child: Text(_textoBotaoCadastrar),
-                onPressed: () {},
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: ElevatedButton(
+                  child: Text(_textoBotaoCadastrar),
+                  onPressed: () {},
+                ),
               ),
             ],
           ),

@@ -57,12 +57,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   key: _formKey,
                   children: [
                     TextFormField(
-                      //validator: (value) {
-                       // if (value!.length < 5) {
-                        //  return "Digite seu nome completo";
-                       // }
-                       // return null;
-                      //},
+                      validator: (value) {
+                        if (value!.length < 5) {
+                          return "Digite seu nome completo";
+                        }
+                        return null;
+                      },
                       controller: _nameInputController,
                       autofocus: true,
                       decoration: InputDecoration(
@@ -89,12 +89,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     TextFormField(
                       //validator: (value) {
                         //if (value!.length < 5) {
-                         // return "Esse e-mail parece curto demais";
+                        // return "Esse e-mail parece curto demais";
                         //} else if (!value.contains("@")) {
-                         // return "Digite um e-mail válido?";
+                         // return "Digite um e-mail válido";
                        // }
-                        //return null;
-                      //},
+                       // return null;
+                     // },
                       controller: _mailInputController,
                       decoration: InputDecoration(
                         labelText: "E-mail",
@@ -151,10 +151,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     (this.showPassword == false)
                         ? TextFormField(
                             //validator: (value) {
-                             // if (value != _passwordInputController.text) {
-                              //  return "As senhas devem ser iguais";
-                             // }
-                             // return null;
+                              //if (value != _passwordInputController.text) {
+                                //return "As senhas devem ser iguais";
+                              //}
+                              //return null;
                             //},
                             controller: _confirmInputController,
                             obscureText: true,
@@ -244,7 +244,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       );
 
     //} else {
-      //print('invalido');
+     // print('invalido');
    // }
   }
 

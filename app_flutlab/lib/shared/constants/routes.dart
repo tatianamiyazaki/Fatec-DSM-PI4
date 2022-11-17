@@ -11,4 +11,8 @@ class Routes {
   String signUp() {
     return authService + "accounts:signUp?key=" + apiKey;
   }
+
+  String api() {
+    return "http://projetopi4.duckdns.org:8123/api/states/sensor.estacao_met_dht11_dht11_temperature";
+  }
 }

@@ -19,10 +19,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http: ^0.12.2
+  #http: ^0.11.3+17
+  #http_parser: ^4.0.0
   shared_preferences: ^2.0.15
+  dio: ^4.0.6
 
+api:
 
+http:
+  cors_allowed_origins:
+    - http://projetopi4.duckdns.org:8123
+    - projetopi4.duckdns.org:8123
 
 dev_dependencies:
   flutter_test:
@@ -33,7 +40,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
+  # flutter_lints: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

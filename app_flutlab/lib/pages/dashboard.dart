@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter//material.dart';
+import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'package:dio/dio.dart';
 import 'dart:html';
-import 'dart:js';
 import 'package:tacalor/pages/login/login_screen.dart';
 import 'package:tacalor/pages/temp_charts.dart';
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
+import '../shared/constants/routes.dart';
 
 import 'humid_charts.dart';
 import 'uv_charts.dart';
@@ -16,18 +17,47 @@ const _textoUmidade = 'Umidade';
 const _textoRaiosUV = 'Raios UV';
 const _textoBotaoCadastrar = 'Cadastrar';
 
-const request = 'https://api.hgbrasil.com/weather?woeid=455863';
+const request = "https://api.hgbrasil.com/weather?woeid=455863";
 
-Future temperatura() async {
-  http.Response response = await http.get(Uri.parse(request));
-  Map map1 = json.decode(response.toString());
-  var results = map1['results']['temp'].toString();
-  print(results);
-  return results;
+Future<String> temperatura() async {
+  try {
+    Dio dio = Dio();
+    //Response response = await dio.get(request);
+    //Map map1 = json.decode(response.toString());
+    //var results = map1['results']['temp'].toString();
+    //return results;
+    dio.options.headers['content-Type'] = 'application/json';
+    dio.options.headers["authorization"] =
+        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI2ZTc4MTkxN2UwYmY0MjYwYmMzNTlkZTU3YTgwNzMyMCIsImlhdCI6MTY2ODQ1Mzg2OCwiZXhwIjoxOTgzODEzODY4fQ.S9BiOzAd8Ho1jmrJ5NY-tDtIVct9YfDBvy_2rVQf7Vw';
+    dio.options.headers['access-control-allow-origin'] =
+        'http://projetopi4.duckdns.org:8123/api/states/sensor.estacao_met_dht11_dht11_temperature';
+    dio.options.headers['access-control-allow-methods'] =
+        "GET,PUT,PATCH,POST,DELETE";
+    dio.options.headers['access-control-allow-headers'] =
+        "Origin, X-Requested-With, Content-Type, Accept";
+    dio.options.headers["type"] = "auth/sign_path";
+    dio.options.headers["path"] = "/api/states";
+    Response response = await dio
+        .get(Routes().api()
+            //"Access-Control-Allow-Origin":
+            //    "http://projetopi4.duckdns.org:8123/api/states/sensor.estacao_met_dht11_dht11_temperature",
+            //"Access-Control-Allow-Methods": "GET,PUT,PATCH,POST,DELETE",
+            //"Access-Control-Allow-Headers":
+            //    "Origin, X-Requested-With, Content-Type, Accept"
+            )
+        .whenComplete(() => print('Fetching done!'));
+    Map map1 = json.decode(response.toString());
+    var results = map1['results']['temp'].toString();
+    print(results);
+    return results;
+  } catch (e) {
+    return "error";
+  }
 }
 
-Future humidade() async {
-  http.Response response = await http.get(request);
+Future<String> humidade() async {
+  Dio dio = Dio();
+  Response response = await dio.get(request);
   Map map1 = json.decode(response.toString());
   var results = map1['results']['humidity'].toString();
   print(results);
@@ -104,9 +134,9 @@ class dashboard extends StatelessWidget {
                                 if (snapshot.hasData) {
                                   return Center(
                                     child: Text(
-                                      'Temperatura: ', // +
-                                      //snapshot.toString().substring(44, 46),
-                                      style: TextStyle(fontSize: 30.0),
+                                      'Temperatura: ' +
+                                          snapshot.toString().substring(44, 46),
+                                      style: TextStyle(fontSize: 20.0),
                                     ),
                                   );
                                 } else {

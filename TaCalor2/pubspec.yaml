@@ -23,6 +23,7 @@ dependencies:
   # shared_preferences: ^2.0.15
   dio: ^4.0.6
   mysql1: ^0.17.1
+  flutter_html: ^2.2.1
 
 
 dev_dependencies:

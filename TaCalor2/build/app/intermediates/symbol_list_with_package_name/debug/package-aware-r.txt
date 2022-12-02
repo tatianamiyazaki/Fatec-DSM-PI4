@@ -17,6 +17,7 @@ attr fontProviderSystemFontFamily
 attr fontStyle
 attr fontVariationSettings
 attr fontWeight
+attr lStar
 attr nestedScrollViewStyle
 attr placeholderActivityName
 attr primaryActivityName
@@ -116,6 +117,10 @@ id icon
 id icon_group
 id info
 id italic
+id item1
+id item2
+id item3
+id item4
 id line1
 id line3
 id locale
@@ -144,6 +149,7 @@ id text
 id text2
 id time
 id title
+id view_tree_lifecycle_owner
 integer status_bar_notification_info_maxnum
 layout custom_dialog
 layout notification_action
@@ -152,7 +158,18 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+menu example_menu
+menu example_menu2
 mipmap ic_launcher
+string exo_download_completed
+string exo_download_description
+string exo_download_downloading
+string exo_download_failed
+string exo_download_notification_channel_name
+string exo_download_paused
+string exo_download_paused_for_network
+string exo_download_paused_for_wifi
+string exo_download_removing
 string status_bar_notification_info_overflow
 style LaunchTheme
 style NormalTheme
@@ -166,7 +183,7 @@ style Widget_Compat_NotificationActionText
 styleable ActivityFilter activityAction activityName
 styleable ActivityRule alwaysExpand
 styleable Capability queryPatterns shortcutMatchRequired
-styleable ColorStateListItem android_color android_alpha alpha
+styleable ColorStateListItem android_color android_alpha android_lStar alpha lStar
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery fontProviderSystemFontFamily
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY

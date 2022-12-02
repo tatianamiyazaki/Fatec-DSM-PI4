@@ -167,8 +167,10 @@ class _dashboardState extends State<dashboard> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          const Icon(Icons.thermostat),
-                          const Text(_textoTemperatura),
+                          const Icon(Icons.thermostat, color: Colors.white,),
+                          const Text(_textoTemperatura, style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,),),
                           FutureBuilder(
                             future: getTemperatura(),
                             builder: (context, snapshot) {
@@ -182,7 +184,7 @@ class _dashboardState extends State<dashboard> {
                                           " °C",
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Color(0xff1e38a7),
+                                        color: Colors.black,
                                       ),
                                     ),
                                   ],
@@ -232,8 +234,11 @@ class _dashboardState extends State<dashboard> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          const Icon(Icons.water_drop_rounded),
-                          const Text(_textoUmidade),
+                          const Icon(Icons.water_drop_rounded, color: Colors.white,),
+                          const Text(_textoUmidade,
+                                      style: TextStyle(
+    fontSize: 20,
+    color: Colors.black,),),
                           FutureBuilder(
                             future: getUmidade(),
                             builder: (context, snapshot) {
@@ -247,7 +252,7 @@ class _dashboardState extends State<dashboard> {
                                           " %",
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Color(0xff1e38a7),
+                                        color: Colors.black,
                                       ),
                                     ),
                                   ],
@@ -293,8 +298,10 @@ class _dashboardState extends State<dashboard> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          const Icon(Icons.sunny),
-                          const Text(_textoRaiosUV),
+                          const Icon(Icons.sunny, color: Colors.white),
+                          const Text(_textoRaiosUV, style: TextStyle(
+    fontSize: 20,
+    color: Colors.black,),),
                           FutureBuilder(
                             future: getRaios(),
                             builder: (context, snapshot) {
@@ -308,7 +315,7 @@ class _dashboardState extends State<dashboard> {
                                           " UV",
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Color(0xff1e38a7),
+                                        color: Colors.black,
                                       ),
                                     ),
                                   ],
@@ -329,7 +336,7 @@ class _dashboardState extends State<dashboard> {
                       ),
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(Color(0xffe75c0c)),
+                            MaterialStateProperty.all(Color(0xffef8146)),
                       ),
                     ),
                   ),
@@ -337,13 +344,14 @@ class _dashboardState extends State<dashboard> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0),
                   child: TextField(
+                    enabled: false,
                     keyboardType: TextInputType.number,
                     style: TextStyle(),
                     decoration: InputDecoration(
-                      labelText: 'Informe seu celular e receba alertas',
+                      labelText: 'Em breve',
                       fillColor: Colors.grey.shade100,
                       filled: true,
-                      hintText: 'Informe seu telefone e receba alertas',
+                      hintText: 'Em Breve',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
